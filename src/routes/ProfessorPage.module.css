@@ -1,0 +1,39 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+.leftPanel {
+    flex: 0 0 20%;
+    /* Adjust the width of the left panel as needed */
+    background-color: #c7cc82;
+    border-radius: 20px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    max-width: 30rem;
+}
+
+.body {
+    min-width: 50rem;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .leftPanel {
+        flex: none;
+        width: 100%;
+    }
+}

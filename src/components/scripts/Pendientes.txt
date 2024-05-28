@@ -1,0 +1,18 @@
+Que una solicitud de activo pase de cero a 1 
+Tomar hora de inicio de sesión y hora de cierre de sesión para generar un pdf
+
+Pestaña de Administrador:
+Ya se trae la informacion de todos los laboratorios y se cambia a una nueva pestaña para poder modificarlos.
+La pestaá de modificar aun no llama a ningun endpoint
+
+Findings:
+==== EN PROFESOR ====
+Aprobar un activo no cambia nada en la base de datos
+
+=== EN OPERADOR ===
+No hay un endpoint que retorne activos que se pueden prestar. Hay que hacer algo para que solo se puedan prestar ciertos activos.
+ya sea que no se muestren activos que están prestados o que tengan solicitudes de activo aprobadas... hay que analizarlo.
+
+Pendientes:
+Asegurar que lo que está funciona
+Crear un reporte de pdf

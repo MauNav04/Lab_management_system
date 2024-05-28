@@ -1,0 +1,208 @@
+
+.body{
+    background: rgb(249,249,249);
+    background: radial-gradient(circle, rgba(249,249,249,1) 0%, rgba(8,143,250,1) 100%);
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Bebas Neue;
+    font-weight: 400;
+    
+  }
+
+  p{
+    display: block;
+    font-size: 1.2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mainadminpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the height to fill the entire viewport */
+  }
+  
+  .header {
+    margin-bottom: 5vh; /* Add some spacing between the header and buttons */
+  }
+  
+  .managementtools {
+    position: fixed;
+    top: 17vh;
+    left: 2vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    height: 70vh;
+    max-width: 22vw;
+    text-align: center;
+    justify-content: space-between;
+   
+  }
+  
+  .actmanagement {
+    position: fixed;
+    top: 17vh;
+    left: 28vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    height: 70vh;
+    max-width: 22vw;
+    text-align: center;
+    justify-content: space-between;
+   
+  }
+
+  .line{
+    display: flex;
+    flex-direction: line;
+    justify-content: space-between;
+  }
+
+  .line2{
+    display: flex;
+    flex-direction: line;
+    position: absolute;
+    bottom: 1vw;
+  
+
+  }
+
+  
+  .profmanagement {
+    position: fixed;
+    top: 17vh;
+    left: 53vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    height: 70vh;
+    max-width: 22vw; 
+    text-align: center;
+    justify-content: space-between;
+   
+  }
+  .othermanagement {
+    position: fixed;
+    top: 17vh;
+    left: 77.5vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    height: 70vh;
+    max-width: 22vw;
+    text-align: center;
+    justify-content: space-between;
+   
+  }
+  .moreinfo {
+    position: fixed;
+    top: 17vh;
+    left: 27vw;
+    background: white;
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    height: 70vh;
+    width: 70vw;
+    justify-content: space-between;
+   
+  }
+  
+  .toptobottom {
+    animation: 1.3s top-to-bottom forwards;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.005em;
+    font-family: Bebas Neue;
+    color: rgba(0,0,0,0.8);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    } 
+   @keyframes top-to-bottom {
+    from {
+    transform: translateY(-48px);
+    }
+    to {
+    transform: translateY(0);
+    }
+    }
+  
+  .btn{
+    font-family: Bebas Neue;
+    font-weight: 100;
+    font-size: 2.5vh;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(360deg, #023e8a 30%, #00b4d8 100%);
+    padding: 20px 50px;
+    border: none;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 600ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+  
+    
+  .btn:hover{
+    padding: 15px 70px;
+      transform : translateY(-0px);
+      background: linear-gradient(360deg,#00b4d8 20%, #023e8a 100%);
+      color: #000000;
+      border: solid 4px #000000;
+    }
+  
+    .imagecontainer {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      max-width: 350px; 
+    }
+    
+    .imagecontainer img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .bigone {
+      position: fixed;
+      top: 17vh;
+      left: 15vw;
+      background: white;
+      display: flex;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgb(0, 0, 0);
+      height: 70vh;
+      width: 70vw;
+      justify-content: space-between;
+     
+    }
+  
+  

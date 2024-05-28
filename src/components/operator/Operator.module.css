@@ -1,0 +1,28 @@
+.reservationOpts {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservationOpts input {
+    width: 335px;
+}
+
+.activeList {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+.activeList li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    margin: 0px 20px;
+    background-color: rgb(239, 201, 96);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    min-width: 2rem;
+
+}
