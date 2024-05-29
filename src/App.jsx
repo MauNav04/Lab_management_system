@@ -30,6 +30,7 @@ import ProfValidator from './components/operator/ProfValidator.jsx'
 import ReturnLoan from './components/operator/ReturnLoan.jsx'
 import AdminLabHome from './components/admin/AdminLabHome.jsx'
 import ModifyLab from './components/admin/ModifyLab.jsx'
+import PdfGenerator from './components/PdfGenerator.jsx'
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
         <Route path='/admin/profmg' element={<Profmg />} />
         <Route path='/admin/opap' element={<Opap />} />
         <Route path='/admin/password' element={<Password />} />
-        <Route path='/admin/reports' element={<Reports />} />
+        <Route path='/admin/reports' element={<PdfGenerator />} />
         <Route path='/logout' element={<LogoutPage />} />
 
         {/* NEW Admin0 Routes */}

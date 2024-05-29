@@ -3,6 +3,11 @@ import classes from './AdminHome.module.css'; // Import CSS file for styling
 import imageSrc from '../img/lab.jpg';
 import activeSrc from '../img/activos.jpg';
 import profSrc from '../img/prof.jpg';
+import { jsPDF } from 'jspdf'; //Para generar los reportes
+import html2canvas from 'html2canvas';
+
+
+
 
 
 const Header = ({ adminName }) => {
