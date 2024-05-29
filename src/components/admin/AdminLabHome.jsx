@@ -5,9 +5,6 @@ import LabOpt from './LabOpt';
 import LabOptForm from './LabOptForm';
 import ModifyLab from './ModifyLab';
 
-
-
-
 function AdminLabHome() {
     const API_URL = 'http://localhost:5095';
     const CURRENT_LABS_EP = '/Laboratorio/MostrarNombreLabsDisponibles';

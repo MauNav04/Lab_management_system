@@ -110,3 +110,38 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+.mainBox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-evenly;
+    margin-right: 5rem;
+    background-color: rgba(233, 188, 103, 0.858);
+    border-radius: 20px;
+    padding: 2.5rem 1rem;
+}
+
+.sideBar h2 {
+    margin: 0rem 0rem 1rem 1rem;
+}
+
+.sideBar button {
+    color: white;
+    background-color: rgb(74, 74, 216);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainContent div {
+    margin: 0rem 1rem;
+}
