@@ -16,3 +16,12 @@ ya sea que no se muestren activos que están prestados o que tengan solicitudes 
 Pendientes:
 Asegurar que lo que está funciona
 Crear un reporte de pdf
+
+
+- Crear seccion de Activos del admin
+- Arreglar activos del OPERADOR
+- Arreglar activos del Profesor
+- Añadir averías
+- Asegurar que registrarse funciona
+- Asegurar que el cambio de password guarda en MD5
+- Sacar el IIS

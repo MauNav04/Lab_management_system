@@ -31,6 +31,7 @@ import ReturnLoan from './components/operator/ReturnLoan.jsx'
 import AdminLabHome from './components/admin/AdminLabHome.jsx'
 import ModifyLab from './components/admin/ModifyLab.jsx'
 import AdminProfMgmt from './components/admin/AdminProfMgmt.jsx'
+import AdminActiveMgmt from './components/admin/AdminActiveMgmt.jsx'
 
 function App() {
 
@@ -57,7 +58,7 @@ function App() {
         <Route path='/admin/labshome' element={<AdminLabHome />} />
         <Route path='/admin/gestionlab' element={<ModifyLab />} />
         <Route path='/admin/gestionprofesor' element={<AdminProfMgmt />} />
-
+        <Route path='/admin/gestionactivos' element={<AdminActiveMgmt />} />
 
         {/* NEW OPERATOR Routes */}
         <Route path='/operador/login' element={<OperatorLogin />} />
