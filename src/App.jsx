@@ -31,6 +31,7 @@ import ReturnLoan from './components/operator/ReturnLoan.jsx'
 import AdminLabHome from './components/admin/AdminLabHome.jsx'
 import ModifyLab from './components/admin/ModifyLab.jsx'
 import PdfGenerator from './components/PdfGenerator.jsx'
+import Averia from './components/Averia.jsx'
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
         <Route path='/operador/prestamo-estudiante' element={<OperatorHome />} />
         <Route path='/operador/validacion-profesor/:placaactivo' element={<ProfValidator />} />
         <Route path='/operador/retornar-activo' element={<ReturnLoan />} />
+        <Route path='/operador/averia' element={<Averia />} />
 
         {/* Professor Routes */}
         <Route element={<RequireAuth allowedRoles={[100]} />}>
