@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import md5 from 'md5';
+import CryptoJS from 'crypto-js';
 
 function LoginPage() {
 
@@ -38,14 +39,14 @@ function LoginPage() {
         try {
             console.log(user, pwd, roles)
             console.log('Password: ', pwd);
-            console.log('Encypted:', md5(pwd));
+            console.log('Encypted:', CryptoJS.MD5(pwd).toString());
 
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     correo: user,
-                    contraseña: pwd
+                    contraseña: CryptoJS.MD5(pwd).toString()
                 })
             };
 

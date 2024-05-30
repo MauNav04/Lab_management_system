@@ -33,10 +33,10 @@ function NewPasswordView() {
     }, [])
 
     useEffect(() => {
-        const result = PWD_REGEX.test(pwd);
-        console.log(result);
+        //const result = PWD_REGEX.test(pwd);
+        //console.log(result);
         console.log(pwd);
-        setValidPwd(result);
+        setValidPwd(pwd);
         const match = pwd === matchPwd;
         setValidMatch(match);
     }, [pwd, matchPwd])
@@ -83,12 +83,12 @@ function NewPasswordView() {
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? classes.instructions : classes.offscreen}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
+                            {/* 8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span> */}
                         </p>
 
-                        <label htmlFor="consfirm_pwd">
+                        <label htmlFor="confirm_pwd">
                             Confirmar Contraseña:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? classes.valid : classes.hide} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? classes.hide : classes.invalid} />

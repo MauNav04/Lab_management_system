@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import ProfOpt from "./ProfOpt";
 import classes from './admin.module.css';
+import { useNavigate } from "react-router-dom";
 
 function AdminProfMgmt() {
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
+
     const API_URL = 'http://localhost:5095';
     const PROFESSOR_DATA = '/Profesor/CredencialesProfesores'
 
@@ -45,7 +49,7 @@ function AdminProfMgmt() {
                     <h2>Opciones</h2>
                     <button onClick={handleShowModify}>Modificar</button>
                     <button onClick={handleShowAdd}>Añadir Profesor</button>
-                    <button>Volver al menú</button>
+                    <button onClick={goBack}>Volver al menú</button>
                 </div>
 
                 {visibleSect === 'modify' && (

@@ -5,7 +5,7 @@ import classes from './Operator.module.css'
 
 function ReturnLoan() {
     const API_URL = 'http://localhost:5095'
-    const COMPLETE_ACTIVE_LIST = '/Profesor/MostrarActivosDisponibles'
+    const COMPLETE_ACTIVE_LIST = '/Profesor/InfoActivos'
     const ACTIVES_ONLOAN = '/Profesor/MostrarActivosEnPrestamos'
     const END_LOAN = '/SolicitudActivo/FinalizarPrestamo'
 

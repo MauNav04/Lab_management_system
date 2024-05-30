@@ -49,8 +49,8 @@ class MainAdminPage extends React.Component {
           <div className={classes.imagecontainer}>
             <img src={imageSrc} alt='None' />
           </div>
-          <Link to="/admin/labmg">
-          <Button text="Ir a Laboratorios"/>
+          <Link to="/admin/labshome">
+            <Button text="Ir a Laboratorios" />
           </Link>
         </div>
 
@@ -67,8 +67,8 @@ class MainAdminPage extends React.Component {
           <div className={classes.imagecontainer}>
             <img src={activeSrc} alt='None' />
           </div>
-          <Link to="/admin/actmg">
-          <Button text="Ir a Activos" />
+          <Link to="/admin/gestionactivos">
+            <Button text="Ir a Activos" />
           </Link>
         </div>
 
@@ -83,8 +83,8 @@ class MainAdminPage extends React.Component {
           <div className={classes.imagecontainer}>
             <img src={profSrc} alt='None' />
           </div>
-          <Link to="/admin/profmg">
-          <Button text="Ir a Profesores"/>
+          <Link to="/admin/gestionprofesor">
+            <Button text="Ir a Profesores" />
           </Link>
         </div>
 
@@ -93,22 +93,19 @@ class MainAdminPage extends React.Component {
           <p> Otras funcionalidades de Administrador
           </p>
           <p></p>
-        <Link to="/admin/opap"> 
-        <Button text="Aprobación de operadores"/>
-        </Link>
-        <p></p>
-        <Link to="/admin/password"> 
-        <Button text="Reestablecer contrseñas"/>
-        </Link>
-        <p></p>
-        <Link to="/admin/reports"> 
-        <Button text="Generador de reportes" onClick={() => this.handleToolButtonClick('labgestor')} />
-        
-        <p></p>
-        </Link>
-        <Link to="/"> 
-        <Button text="Cerrar sesión" />
-        </Link>
+          <p></p>
+          <Link to="/admin/password">
+            <Button text="Reestablecer contrseñas" />
+          </Link>
+          <p></p>
+          <Link to="/admin/reports">
+            <Button text="Generador de reportes" onClick={() => this.handleToolButtonClick('labgestor')} />
+
+            <p></p>
+          </Link>
+          <Link to="/">
+            <Button text="Cerrar sesión" />
+          </Link>
         </div>
 
 

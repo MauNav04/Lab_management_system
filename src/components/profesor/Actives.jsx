@@ -3,9 +3,9 @@ import styles from './Actives.module.css'
 import { MdCancel } from "react-icons/md";
 import { MdCheckCircle } from "react-icons/md";
 
-function Actives({ id, nombre, apellido, tipo, onDelete }) {
+function Actives({ id, nombre, apellido, tipo, placa, onDelete }) {
     function onDeleteHandler() {
-        onDelete(id)
+        onDelete(id, placa)
     }
 
     return (

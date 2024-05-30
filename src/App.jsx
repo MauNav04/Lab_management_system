@@ -11,10 +11,6 @@ import ProfessorBody from './components/profesor/ProfessorBody.jsx'
 import Home from './routes/Home.jsx'
 import Unauthorized from './routes/Unauthorized.jsx'
 import MainAdminPage from './components/AdminHome.jsx'
-import Labmg from './components/Labmg.jsx'
-import Actmg from './components/Actmg.jsx'
-import Profmg from './components/Profmg.jsx'
-import Opap from './components/Opap.jsx'
 import Password from './components/Password.jsx'
 import Reports from './components/Reports.jsx'
 import LoginAdmin from './components/LoginAdmin.jsx'
@@ -32,6 +28,9 @@ import AdminLabHome from './components/admin/AdminLabHome.jsx'
 import ModifyLab from './components/admin/ModifyLab.jsx'
 import AdminProfMgmt from './components/admin/AdminProfMgmt.jsx'
 import AdminActiveMgmt from './components/admin/AdminActiveMgmt.jsx'
+import Averia from './components/Averia.jsx'
+import PdfGenerator from './components/PdfGenerator.jsx'
+import OperatorLoanSt from './components/operator/OperatosLoanSt.jsx'
 
 function App() {
 
@@ -46,13 +45,11 @@ function App() {
         <Route path='unauthorized' element={<Unauthorized />} />
 
         <Route path='/admin' element={<MainAdminPage />} />
-        <Route path='/admin/labmg' element={<Labmg />} />
-        <Route path='/admin/actmg' element={<Actmg />} />
-        <Route path='/admin/profmg' element={<Profmg />} />
-        <Route path='/admin/opap' element={<Opap />} />
         <Route path='/admin/password' element={<Password />} />
-        <Route path='/admin/reports' element={<Reports />} />
         <Route path='/logout' element={<LogoutPage />} />
+
+        <Route path='/admin/reports' element={<PdfGenerator />} />
+        <Route path='/operador/averia' element={<Averia />} />
 
         {/* NEW Admin0 Routes */}
         <Route path='/admin/labshome' element={<AdminLabHome />} />
@@ -66,7 +63,7 @@ function App() {
         <Route path='/operador/prestamo' element={<OperatorLoan />} />
         <Route path='/operador/labs' element={<OperatorLabs />} />
         <Route path='/operador/prestamo-profesor' element={<OperatorLoanPf />} />
-        <Route path='/operador/prestamo-estudiante' element={<OperatorHome />} />
+        <Route path='/operador/prestamo-estudiante' element={<OperatorLoanSt />} />
         <Route path='/operador/validacion-profesor/:placaactivo' element={<ProfValidator />} />
         <Route path='/operador/retornar-activo' element={<ReturnLoan />} />
 

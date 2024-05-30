@@ -40,7 +40,7 @@ function OperatorLoan() {
             <h2>Opciones para préstamo de activos</h2>
 
             <Link to='/operador/prestamo-profesor'>Solicitar préstamo a profesor</Link> <br />
-            <Link to='/operador/labs'>Solicitar préstamo a estudiante</Link> <br />
+            <Link to='/operador/prestamo-estudiante'>Solicitar préstamo a estudiante</Link> <br />
             <Link to='/operador/retornar-activo'>Devolución de activo</Link> <br />
 
             <button onClick={goBack}>Volver</button>

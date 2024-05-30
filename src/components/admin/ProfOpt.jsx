@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { parseISO, format } from 'date-fns';
 import CryptoJS from 'crypto-js';
+import classes from './admin.module.css'
 
 
 function ProfOpt({ Cedula, Nombre, Correo, Apellido1, Apellido2, FechaNacimiento, onClickHandler, NewFlag }) {
@@ -80,25 +81,52 @@ function ProfOpt({ Cedula, Nombre, Correo, Apellido1, Apellido2, FechaNacimiento
         }
     };
 
+    async function newTeacher(newData) {
+        const requestBody = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "correo": newData.correo,
+                "cedula": newData.cedula,
+                "password": newData.passwordInput,
+                "nombre": newData.nombre,
+                "apellido1": newData.apellido1,
+                "apellido2": newData.apellido2,
+                "fechaNacimiento": newData.nacimiento,
+                "correoAdministrador": 'betico@gmail.com'
+            })
+        }
+        try {
+            const putName = await fetch(API_URL + POST_NEW_TEACHER, requestBody);
+
+        } catch (error) {
+            console.error('Error fetching labs:', error);
+        }
+    };
+
     const onSubmit = (data) => {
         if (NewFlag) {
             const encryptedPassword = CryptoJS.MD5(data.passwordInput).toString();
             const formattedData = {
                 ...data,
-                nacimiento: format(data.nacimiento, 'dd-MM-yyyy'),
+                nacimiento: format(data.nacimiento, 'yyyy-MM-dd'),
                 passwordInput: encryptedPassword
             };
 
             console.log('NEW TEACHER', formattedData);
             newTeacher(formattedData)
+            alert('Profesor Añadido')
         }
         else {
             const formattedData = {
                 ...data,
-                nacimiento: format(data.nacimiento, 'dd-MM-yyyy')
+                nacimiento: format(data.nacimiento, 'yyyy-MM-dd')
             };
             console.log('UPDATED TEACHER', formattedData);
             updateProfName(formattedData);
+            alert('Datos del profesor actualizados')
         }
     };
 
@@ -127,17 +155,22 @@ function ProfOpt({ Cedula, Nombre, Correo, Apellido1, Apellido2, FechaNacimiento
                     defaultValue={Apellido2}
                     {...register("apellido2")} />
                 <label htmlFor="nacimiento">Fecha de nacimiento: </label>
-                <Controller
-                    name="nacimiento"
-                    control={control}
-                    render={({ field }) => (
-                        <DatePicker
-                            placeholderText="Select date"
-                            onChange={(date) => field.onChange(date)}
-                            selected={field.value}
-                        />
-                    )}
-                />
+                <div className={classes.datePickContainer}>
+
+                    <Controller
+                        name="nacimiento"
+                        control={control}
+                        render={({ field }) => (
+                            <DatePicker
+                                placeholderText="Select date"
+                                onChange={(date) => field.onChange(date)}
+                                selected={field.value}
+                                className={classes.datePick}
+                                popperClassName={classes.customCalendar}
+                            />
+                        )}
+                    />
+                </div>
                 <label htmlFor="correo">Correo electrónico: </label>
                 <input
                     id="correo"

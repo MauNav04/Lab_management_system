@@ -36,6 +36,7 @@ function ActiveObjForm({ Tipo, Placa, Marca }) {
     const onSubmit = (data) => {
         console.log('UPDATED ACTIVE DATA', data);
         updatActiveData(data);
+        alert('Activo ha sido actualizado')
     };
 
     return <>

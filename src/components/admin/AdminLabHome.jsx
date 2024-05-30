@@ -4,8 +4,12 @@ import classes from './admin.module.css';
 import LabOpt from './LabOpt';
 import LabOptForm from './LabOptForm';
 import ModifyLab from './ModifyLab';
+import { Navigate, useNavigate } from "react-router-dom";
 
 function AdminLabHome() {
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
+
     const API_URL = 'http://localhost:5095';
     const CURRENT_LABS_EP = '/Laboratorio/MostrarNombreLabsDisponibles';
     const INFO_LAB_EP = '/Laboratorio/MostrarInformacionLab?nombreLab=';
@@ -124,9 +128,10 @@ function AdminLabHome() {
                         })}
                     </ul>
 
-                    <Link to='/logout'> Cerrar Sesión </Link>
+
                 </div>
             )}
+            <button onClick={goBack}>Volver</button>
 
         </div>
     </>

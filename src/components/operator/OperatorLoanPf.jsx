@@ -9,7 +9,7 @@ function OperatorLoanPf() {
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
 
-    //List with all the solicitudes that the students have sent
+    //List with all the current available actives
     const [activeList, setActiveList] = useState([])
 
     const API_URL = 'http://localhost:5095'
@@ -32,9 +32,8 @@ function OperatorLoanPf() {
         fetchActives();
     }, [])
 
-    function activeReqHadler(resData) {
+    function activeReqHandler(resData) {
         for (let i = 0; i < resData.length; i++) {
-            //const element = resData[i];
             console.log(resData[i])
             setSolicitude((solics) => [resData[i], ...solics]);
         }
@@ -45,10 +44,6 @@ function OperatorLoanPf() {
         console.log(solicitudes)
     }
 
-    function noseHandler(e) {
-        console.log(solicitudes)
-    }
-
     function handleDelete(placa) {
         setActiveList(activeList.filter(activo => activo.Placa !== placa));
         navigate('/operador/validacion-profesor/' + placa)
@@ -56,13 +51,11 @@ function OperatorLoanPf() {
 
     return <>
 
-        <h2>Solicitar activo a un profesor</h2>
+        <h2>Solicitar activo para un profesor</h2>
 
         <div>
             <h3>Activos Disponibles</h3>
 
-            {/* En este punto se están mostrando TODOS los activos, no hay un endopoint que solo muestre activos disponbles realmente
-            Hay que llamar a activos en prestamos y restar las listas. */}
             {activeList.length > 0 ? (
                 <ul className={classes.activeList}>
                     {activeList.map((solic) => <ActiveObj

@@ -1,9 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import classes from './admin.module.css';
 import ActiveObjForm from "./ActiveOptFrom";
+import { useNavigate } from "react-router-dom";
 
 
 function AdminActiveMgmt() {
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
+
     const API_URL = 'http://localhost:5095';
     const GET_ACTIVES_DATA = '/Profesor/InfoActivos'
 
@@ -40,7 +44,7 @@ function AdminActiveMgmt() {
                             <li>Osciloscopio</li>
                         </ul>
                     </div>
-                    <button>Volver al menú</button>
+                    <button onClick={goBack}>Volver al menú</button>
                 </div>
 
                 <div name="MainContent" className={classes.mainContent}>

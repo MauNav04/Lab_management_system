@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 import md5 from 'md5';
 import { set } from 'date-fns';
+import CryptoJS from 'crypto-js';
 
 function ProfValidator() {
 
@@ -102,7 +103,7 @@ function ProfValidator() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     correo: user,
-                    contraseña: pwd
+                    contraseña: CryptoJS.MD5(pwd).toString()
                 })
             };
 

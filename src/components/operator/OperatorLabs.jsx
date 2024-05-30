@@ -79,7 +79,6 @@ function Labs() {
         console.log(weekSchedule);
         for (let i = 0; i < weekSchedule.length; i++) {
             const day = weekSchedule[i];
-            //console.log('Day: ', daysSchedule)
             if (day.Dia === dayToSchedule) {
                 sethourScheduleArray(generateHourArray(day.HoraApertura, day.HoraCierre))
                 console.log(hourScheduleArray);

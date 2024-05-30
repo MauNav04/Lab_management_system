@@ -13,8 +13,10 @@ function ProfessorBody() {
     //List with all the solicitudes that the students have sent
     const [solicitudes, setSolicitude] = useState([])
 
+    const API_URL = 'http://localhost:5095'
+    const PUT_APPROVE_SOLIC = '/SolicitudActivo/AprobarSolicitudActivoId?id='
+
     useEffect(() => {
-        const API_URL = 'http://localhost:5095'
         const INFO_LAB_EP = '/Laboratorio/MostrarInformacionLab?nombreLab='
 
         const requestOptions = {
@@ -36,6 +38,23 @@ function ProfessorBody() {
         fetchPosts();
     }, [])
 
+    async function approveSolic(id, placa) {
+        const aprovalOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': '*/*'
+            },
+        };
+
+        try {
+            await fetch(API_URL + PUT_APPROVE_SOLIC + id + '&placa=' + placa, aprovalOptions)
+            console.log('SOLICITUDE APPROVED')
+        } catch (error) {
+            console.log('Error:', error)
+        }
+    }
+
     function activeReqHadler(resData) {
         for (let i = 0; i < resData.length; i++) {
             //const element = resData[i];
@@ -53,8 +72,9 @@ function ProfessorBody() {
         console.log(solicitudes)
     }
 
-    function handleDelete(id) {
+    function handleDelete(id, placa) {
         setSolicitude(solicitudes.filter(solic => solic.IdActivo !== id));
+        approveSolic(id, placa)
     };
 
     return <>
@@ -68,6 +88,7 @@ function ProfessorBody() {
                     nombre={solic.NombreEstudiante}
                     apellido={solic.Apellido1Estudiante + ' ' + solic.Apellido2Estudiante}
                     tipo={solic.Tipo}
+                    placa={solic.PlacaActivo}
                     onDelete={handleDelete}
                 />)}
             </ul>

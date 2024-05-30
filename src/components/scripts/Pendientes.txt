@@ -25,3 +25,7 @@ Crear un reporte de pdf
 - Asegurar que registrarse funciona
 - Asegurar que el cambio de password guarda en MD5
 - Sacar el IIS
+
+
+- Revisar capacidad de los labs
+- fecha no cambia en profesores
