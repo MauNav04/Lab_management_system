@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 import md5 from 'md5';
+import { set } from 'date-fns';
 
 function ProfValidator() {
 
@@ -19,7 +20,6 @@ function ProfValidator() {
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
     const [retryLogin, setRetryLogin] = useState(false);
     const [responseMsg, setResponseMsg] = useState('');
 
@@ -28,6 +28,8 @@ function ProfValidator() {
 
     const API_URL = 'http://localhost:5095'
     const NEW_ACTIVE_SOLIC = '/SolicitudActivo/AgregarSolicitudActivo'
+    const GET_TEACHER_SOLICS = '/Profesor/SolicitudesPendientes?correoProfesor='
+    const PUT_APPROVE_SOLIC = '/SolicitudActivo/AprobarSolicitudActivoId?id='
 
     useEffect(() => {
         userRef.current.focus();
@@ -36,7 +38,6 @@ function ProfValidator() {
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd])
-
 
     const requestOptions = {
         method: 'POST',
@@ -61,6 +62,36 @@ function ProfValidator() {
         }
     }
 
+    async function getSolicId(resistor) {
+        try {
+            const response = await fetch(API_URL + GET_TEACHER_SOLICS + user);
+            const resData = await response.json();
+            console.log('RESPONSEEE', resData[resData.length - 1]);
+            return (resData[resData.length - 1])
+        } catch (error) {
+            console.log('Error:', error)
+        }
+    }
+
+    async function approveSolic(resistor) {
+        const aprovalOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': '*/*'
+            },
+        };
+
+        try {
+            console.log('INPUT: ', resistor)
+            await fetch(API_URL + PUT_APPROVE_SOLIC + resistor.IdActivo + '&placa=' + placaactivo, aprovalOptions)
+            console.log('SOLICITUDE APPROVED')
+        } catch (error) {
+            console.log('Error:', error)
+        }
+    }
+
+
     //Ya hasta aqui se logra generar una nueva solicitud de activo para un profesor, falta hacer lo mismo pero para un estudiante
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -81,15 +112,16 @@ function ProfValidator() {
             console.log(from)
 
             if (response.status === 200) {
-                setResponseMsg(textData);
+                //setResponseMsg(textData);
                 //setSuccess(true);
-                await newActiveSolic(response);
-                console.log('USER', auth.user);
+                const req1 = await newActiveSolic(response);
+                const req2 = await getSolicId(req1);
+                await approveSolic(req2);
+                console.log('Logged USER', auth.user);
+                console.log('USER', user);
                 console.log('RESP', response);
                 setUser('');
                 setPwd('');
-                //navigate('/adwda')
-                //navigate('/profesores');
                 navigate(from, { replace: true });
             } else {
                 setResponseMsg(textData)

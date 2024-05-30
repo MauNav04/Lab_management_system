@@ -6,7 +6,7 @@ function ActiveObj({ Tipo, Placa, Marca, Texto, onDelete, id }) {
             onDelete(Placa)
         } else {
             onDelete(id, Placa)
-        }   
+        }
     }
 
 
